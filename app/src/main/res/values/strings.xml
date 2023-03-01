@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">PetCareKotlin</string>
+
+    <string name="silde_heading1">Welcome to Pet Care</string>
+    <string name="silde_heading2">Proven experts</string>
+    <string name="silde_heading3">Reliable reviews</string>
+
+
+    <string name="slide_description1">All types of services for your pet in one\nplace, instantly searchable.</string>
+    <string name="slide_description2">We interview every specialist before\nthey get to work.</string>
+    <string name="slide_description3">A review can be left only by a user\nwho used the service.</string>
+
+
+    <string name="signIn">Sign In</string>
+    <string name="next">Next</string>
+    <string name="welcome_to">Welcome\t\t\t\nto Pet Care</string>
+    <string name="or_continue_with">or continue with</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

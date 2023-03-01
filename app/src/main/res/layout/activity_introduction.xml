@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:id="@+id/s_txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:fontFamily="@font/encode_sans_bold"
+        android:text="@string/signIn"
+        android:textColor="#4552CB"
+        android:textSize="@dimen/_12ssp" />
+
+    <LinearLayout
+        android:id="@+id/ll22"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_below="@+id/s_txt1"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:orientation="vertical" />
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dots"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_7sdp"
+        android:layout_below="@id/ll22"
+        android:layout_centerInParent="true"
+        app:dotsColor="#E6E7F8"
+        app:dotsSize="@dimen/_8sdp"
+        app:selectedDotColor="#F1A852" />
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_420sdp"
+        android:layout_below="@+id/s_txt1"
+        android:layout_marginTop="@dimen/_17sdp">
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next_btn"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewpager"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/btn1_style"
+        android:fontFamily="@font/encode_sans_bold"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+</RelativeLayout>
