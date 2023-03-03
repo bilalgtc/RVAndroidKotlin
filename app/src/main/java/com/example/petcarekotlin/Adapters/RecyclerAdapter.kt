@@ -74,6 +74,27 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             holder.cattxt.background=null
         }
 
+        holder.update.setOnClickListener {
+
+            val i = Intent(it.context,AddDetails::class.java)
+            i.putExtra("name",newlist.name)
+            i.putExtra("species",newlist.species)
+            i.putExtra("breed",newlist.breed)
+            i.putExtra("size",newlist.size)
+            i.putExtra("gender",newlist.gender)
+            i.putExtra("image",newlist.image)
+
+            i.putExtra("neutered",newlist.neutered.toString())
+            i.putExtra("vacci",newlist.vacci.toString())
+            i.putExtra("dogs",newlist.dogs.toString())
+            i.putExtra("cats",newlist.cats.toString())
+            i.putExtra("child",newlist.child.toString())
+            i.putExtra("children",newlist.childern.toString())
+            i.putExtra("edit",false)
+            it.context.startActivity(i)
+
+        }
+
         holder.image.setOnClickListener {
             val i = Intent(it.context,Details::class.java)
             i.putExtra("name",newlist.name)
@@ -111,6 +132,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         val vaccitxt:TextView = itemView.findViewById(R.id.vacci_txt)
         val dogtxt:TextView = itemView.findViewById(R.id.friwithdogs_txt)
         val cattxt:TextView = itemView.findViewById(R.id.friwithcats_txt)
+        val update:ImageView  = itemView.findViewById(R.id.update_btn)
 
 
 

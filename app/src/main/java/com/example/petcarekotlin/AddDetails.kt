@@ -3,6 +3,7 @@ package com.example.petcarekotlin
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -42,6 +43,7 @@ class AddDetails : AppCompatActivity() {
 
 
         cardStats()
+        updateData()
 
         binding.addImage.setOnClickListener {
             imagePickDialog()
@@ -185,6 +187,7 @@ class AddDetails : AppCompatActivity() {
                 )
             )
             binding.femaleTxt.setTextColor(Color.BLACK)
+            binding.cardView.cardElevation = 10F
             gender = "male"
 
         }
@@ -208,11 +211,90 @@ class AddDetails : AppCompatActivity() {
                 )
             )
             binding.maleTxt.setTextColor(Color.BLACK)
+            binding.cardView2.cardElevation = 10F
             gender = "female"
         }
 
 
     }
 
+    fun updateData(){
+
+        val name = intent.getStringExtra("name")
+        val species = intent.getStringExtra("species")
+        val breed = intent.getStringExtra("breed")
+        val size = intent.getStringExtra("size")
+        val gender = intent.getStringExtra("gender")
+        val images: ByteArray? = intent.getByteArrayExtra("image")
+
+        val neutered = intent.getStringExtra("neutered")
+        val vacci = intent.getStringExtra("vacci")
+        val dog = intent.getStringExtra("dogs")
+        val cat = intent.getStringExtra("cats")
+        val child = intent.getStringExtra("child")
+        val children = intent.getStringExtra("children")
+
+        binding.nameEd.setText(name)
+        binding.speciesEd.setText(species)
+        binding.breedEd.setText(breed)
+        binding.sizeEd.setText(size)
+
+        binding.circleImageView.setImageBitmap(getImage(images))
+
+        if (gender.equals("male")){
+            binding.cardView.background = getDrawable(R.drawable.card_blue_back)
+            binding.maleImg.setColorFilter(
+                ContextCompat.getColor(
+                    applicationContext,
+                    R.color.white
+                )
+            )
+            binding.maleTxt.setTextColor(Color.WHITE)
+
+            binding.cardView2.background = getDrawable(R.drawable.card_border)
+            binding.cardView2.cardElevation = 0f
+            binding.femaleImg.setColorFilter(
+                ContextCompat.getColor(
+                    applicationContext,
+                    R.color.black
+                )
+            )
+            binding.femaleTxt.setTextColor(Color.BLACK)
+            binding.cardView.cardElevation = 10F
+        }else{
+
+            binding.cardView2.background = getDrawable(R.drawable.card_blue_back)
+            binding.femaleImg.setColorFilter(
+                ContextCompat.getColor(
+                    applicationContext,
+                    R.color.white
+                )
+            )
+            binding.femaleTxt.setTextColor(Color.WHITE)
+
+            binding.cardView.background = getDrawable(R.drawable.card_border)
+            binding.cardView.cardElevation = 0f
+            binding.maleImg.setColorFilter(
+                ContextCompat.getColor(
+                    applicationContext,
+                    R.color.black
+                )
+            )
+            binding.maleTxt.setTextColor(Color.BLACK)
+            binding.cardView2.cardElevation = 10F
+        }
+
+        binding.s1.isChecked = neutered.equals("true")
+        binding.s2.isChecked = vacci.equals("true")
+        binding.s3.isChecked = dog.equals("true")
+        binding.s4.isChecked = cat.equals("true")
+        binding.s5.isChecked = child.equals("true")
+        binding.s6.isChecked = children.equals("true")
+
+    }
+
+    fun getImage(images: ByteArray?): Bitmap? {
+        return images?.let { BitmapFactory.decodeByteArray(images, 0, it.size) }
+    }
 
 }
