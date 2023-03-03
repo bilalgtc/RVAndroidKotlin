@@ -1,7 +1,6 @@
 package com.example.petcarekotlin.Adapters
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -10,11 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcarekotlin.AddDetails
 import com.example.petcarekotlin.Details
-import com.example.petcarekotlin.MainActivity
 import com.example.petcarekotlin.PetData.PetModel
 import com.example.petcarekotlin.R
 
@@ -40,26 +37,26 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
         if (newlist.gender =="male")
 
-        holder.gender.text = "male"
+            holder.gender.text = "male"
         else{
             holder.gender.text = "female"
         }
 
-        if (newlist.neutered.equals(true)) {
+        if (newlist.neutered) {
             holder.neuteredtxt.text = "Neutered"
         }else{
             holder.neuteredtxt.text = " "
             holder.neuteredtxt.background=null
         }
 
-        if (newlist.vacci.equals(true)) {
+        if (newlist.vacci) {
             holder.vaccitxt.text = "Vaccinated"
         }else{
             holder.vaccitxt.text = " "
             holder.vaccitxt.background=null
         }
 
-        if (newlist.dogs.equals(true)) {
+        if (newlist.dogs) {
             holder.cattxt.text = "Friendly with dogs"
         }else{
             holder.dogtxt.text = " "
@@ -67,7 +64,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
         }
 
-        if (newlist.cats.equals(true)) {
+        if (newlist.cats) {
             holder.cattxt.text = "Friendly with dogs"
         }else{
             holder.cattxt.text = ""
