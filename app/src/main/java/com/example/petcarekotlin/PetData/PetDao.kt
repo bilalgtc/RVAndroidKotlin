@@ -14,7 +14,7 @@ interface PetDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addData(petModel: PetModel)
 
-    @Query("SELECT * FROM pet_table ORDER BY id ASC")
+    @Query("SELECT * FROM pet_detail ORDER BY id ASC")
     fun readAllData(): LiveData<List<PetModel>>
 
 }

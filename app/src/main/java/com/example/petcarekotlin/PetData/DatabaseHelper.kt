@@ -32,7 +32,7 @@ abstract class DatabaseHelper :RoomDatabase(){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     DatabaseHelper::class.java,
-                    "pet_database"
+                    "pet_datas"
                 ).build()
                 INSTANCE = instance
                 return instance

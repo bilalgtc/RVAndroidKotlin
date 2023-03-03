@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Details">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_410sdp">
+
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_350sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dogimg3x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/info_back_btn"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:src="@drawable/back_arrow"
+                    app:tint="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:src="@drawable/like"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:src="@drawable/share"
+                    app:layout_constraintBottom_toBottomOf="@+id/info_back_btn"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdview"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:elevation="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_16sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView2"
+                            android:layout_width="@dimen/_64sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_11sdp"
+                            android:backgroundTint="#4552CB"
+                            app:cardCornerRadius="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/encode_sans_bold"
+                                android:text="4.9"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_28sdp" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/encode_sans"
+                            android:text="125 reviews"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+                            app:layout_constraintStart_toStartOf="@+id/cardView2"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+                        <TextView
+                            android:id="@+id/dogname_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_11sdp"
+                            android:fontFamily="@font/encode_sans_bold"
+                            android:text="Troy"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_18ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/paw"
+                            app:layout_constraintStart_toStartOf="@+id/dogname_txt"
+                            app:layout_constraintTop_toBottomOf="@+id/dogname_txt" />
+
+                        <TextView
+                            android:id="@+id/breed_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:fontFamily="@font/encode_sans"
+                            android:text="Dog"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                            app:layout_constraintStart_toEndOf="@+id/imageView5"
+                            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_11sdp"
+                            android:layout_marginStart="@dimen/_17sdp"
+                            android:src="@drawable/icon_dog"
+                            app:layout_constraintBottom_toBottomOf="@+id/breed_txt"
+                            app:layout_constraintStart_toEndOf="@+id/breed_txt"
+                            app:layout_constraintTop_toTopOf="@+id/breed_txt" />
+
+                        <TextView
+                            android:id="@+id/breed_name_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:fontFamily="@font/encode_sans"
+                            android:text="German Shepard"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_7ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                            app:layout_constraintStart_toEndOf="@+id/imageView6"
+                            app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:src="@drawable/gen_icon"
+                            app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                            app:layout_constraintStart_toStartOf="@+id/imageView5"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+                        <TextView
+                            android:id="@+id/gender2_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:fontFamily="@font/encode_sans"
+                            android:text="Male"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_8ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                            app:layout_constraintStart_toEndOf="@+id/imageView7"
+                            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_11sdp"
+                            android:layout_marginStart="@dimen/_17sdp"
+                            android:src="@drawable/size_icon"
+                            app:layout_constraintBottom_toBottomOf="@+id/gender2_txt"
+                            app:layout_constraintStart_toEndOf="@+id/gender2_txt"
+                            app:layout_constraintTop_toTopOf="@+id/gender2_txt" />
+
+                        <TextView
+                            android:id="@+id/size2_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:fontFamily="@font/encode_sans"
+                            android:text="80inch"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_7ssp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                            app:layout_constraintStart_toEndOf="@+id/imageView8"
+                            app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/info_txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cons_layout"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/encode_sans_bold"
+                android:text="Introduction"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" />
+
+            <TextView
+                android:id="@+id/info_txt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/info_txt1"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/encode_sans"
+                android:text="I'm 17 month old German Shepherd called Troy, Snaffs (or \nSnafu when naughty). Apparently l'm characterised as\n'special needs'because I'm a tripaw. Pff, no special needs \nhere except I'm the doggy equivalent of a teenager."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/info_txt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/info_txt2"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/encode_sans_bold"
+                android:text="Personality"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" />
+
+            <TextView
+                android:id="@+id/info_txt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/info_txt3"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/encode_sans"
+                android:text="This should be the biggest section, and cover personality features, adorable things they do, energy level, if they are affectionate (and if so, in what ways), things they love to do, any training they have, favorite pastimes, any funny things they do, etc.). When we write our bios, this section is usually 3-6 paragraphs long! The more specific info you give, the more people will get a feel for your dog and the better response you will get.
+"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/info_txt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/info_txt4"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/encode_sans_bold"
+                android:text="Intelligence"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" />
+
+            <TextView
+                android:id="@+id/info_txt6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/info_txt5"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:fontFamily="@font/encode_sans"
+                android:text="German Shepherds were bred specifically for their intelligence.In a list of breeds most likely to bark as watchdogs, Stanley Coren ranked the breed in second place.Coupled with their strength, this trait makes the breed desirable as police, guard and search and rescue dogs, as they are able to quickly learn various tasks and interpret instructions better than other breeds.
+"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp" />
+
+
+            <TextView
+                android:id="@+id/info_txt7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/info_txt6"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:fontFamily="@font/encode_sans_bold"
+                android:text="Additional Information"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/info_txt7"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:gravity="center_vertical"
+                android:text="Neutered"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/s1"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/info_txt7"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/check_circle_24" />
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/txt1"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="center_vertical"
+                android:text="Vaccinated"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/s2"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/s1"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/check_circle_24" />
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/txt2"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="center_vertical"
+                android:text="Friendly with dogs"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/s3"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/s2"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/check_circle_24" />
+
+
+            <TextView
+                android:id="@+id/txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/txt3"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="center_vertical"
+                android:text="Friendly with cats"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/s4"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/s3"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/check_circle_24" />
+
+
+            <TextView
+                android:id="@+id/txt5"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/txt4"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="center_vertical"
+                android:text="Friendly with kids &#60;10 year"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/s5"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/s4"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/check_circle_24" />
+
+            <TextView
+                android:id="@+id/txt6"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/txt5"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:gravity="center_vertical"
+                android:text="Friendly with kids &#62;10 year"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/s6"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_below="@id/s5"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/check_circle_24" />
+
+
+            <ImageView
+                android:layout_width="@dimen/_132sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_below="@id/txt6"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
