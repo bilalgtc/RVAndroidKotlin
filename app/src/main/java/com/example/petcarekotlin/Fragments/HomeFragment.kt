@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
 
 
         val recyclerView = v.findViewById<RecyclerView>(R.id.dash_recyclerView)
-        val adapter = RecyclerAdapter()
+        val adapter = RecyclerAdapter(v.context as AddDetails)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(v.context)
         petViewModel.readAllData.observe(viewLifecycleOwner) { user ->

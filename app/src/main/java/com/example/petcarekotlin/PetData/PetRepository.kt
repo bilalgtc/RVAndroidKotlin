@@ -11,5 +11,13 @@ class PetRepository(private val petDao: PetDao) {
         petDao.addData(petModel)
     }
 
+    suspend fun updatePet(petModel: PetModel){
+        petDao.updatePet(petModel)
+    }
+
+    suspend fun deletePet(petModel: PetModel){
+        petDao.deletePet(petModel)
+    }
+
 
 }

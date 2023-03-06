@@ -1,6 +1,7 @@
 package com.example.petcarekotlin.Adapters
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -9,15 +10,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcarekotlin.AddDetails
 import com.example.petcarekotlin.Details
+import com.example.petcarekotlin.Fragments.HomeFragment
 import com.example.petcarekotlin.PetData.PetModel
+import com.example.petcarekotlin.PetData.PetViewModel
 import com.example.petcarekotlin.R
+import com.example.roomapp.data.UserViewModel
 
 
-class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter constructor(val context:AddDetails): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
+    private lateinit var petViewModel: PetViewModel
     private var petlist = emptyList<PetModel>()
 
 
@@ -74,6 +81,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         holder.update.setOnClickListener {
 
             val i = Intent(it.context,AddDetails::class.java)
+            i.putExtra("id",newlist.id.toString())
             i.putExtra("name",newlist.name)
             i.putExtra("species",newlist.species)
             i.putExtra("breed",newlist.breed)
@@ -87,7 +95,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             i.putExtra("cats",newlist.cats.toString())
             i.putExtra("child",newlist.child.toString())
             i.putExtra("children",newlist.childern.toString())
-            i.putExtra("edit",false)
+            i.putExtra("isEditMode",true)
             it.context.startActivity(i)
 
         }
@@ -111,7 +119,12 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
         }
 
+        holder.delete.setOnClickListener {
+            petViewModel = ViewModelProvider(context).get(petViewModel::class.java)
+            petViewModel.deletePet(newlist)
+            Toast.makeText(context,"Deleted",Toast.LENGTH_SHORT).show()
 
+        }
     }
 
     override fun getItemCount(): Int {
@@ -130,6 +143,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         val dogtxt:TextView = itemView.findViewById(R.id.friwithdogs_txt)
         val cattxt:TextView = itemView.findViewById(R.id.friwithcats_txt)
         val update:ImageView  = itemView.findViewById(R.id.update_btn)
+        val delete:ImageView  = itemView.findViewById(R.id.delete_img)
 
 
 

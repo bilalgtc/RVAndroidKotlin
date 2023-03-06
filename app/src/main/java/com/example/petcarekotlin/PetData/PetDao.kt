@@ -1,10 +1,7 @@
 package com.example.petcarekotlin.PetData
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.petcarekotlin.LoginData.User
 
 
@@ -16,5 +13,11 @@ interface PetDao {
 
     @Query("SELECT * FROM pet_detail ORDER BY id ASC")
     fun readAllData(): LiveData<List<PetModel>>
+
+    @Update
+    suspend fun updatePet(petModel: PetModel)
+
+    @Delete
+     fun deletePet(petModel: PetModel)
 
 }

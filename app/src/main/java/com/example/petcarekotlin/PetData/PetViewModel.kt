@@ -26,4 +26,16 @@ class PetViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+
+    fun updatePet(petModel: PetModel){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updatePet(petModel)
+        }
+    }
+    fun deletePet(petModel: PetModel){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deletePet(petModel)
+        }
+    }
+
 }
