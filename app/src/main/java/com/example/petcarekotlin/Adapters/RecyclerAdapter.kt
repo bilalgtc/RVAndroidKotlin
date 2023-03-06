@@ -1,7 +1,6 @@
 package com.example.petcarekotlin.Adapters
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -14,15 +13,14 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcarekotlin.AddDetails
+import com.example.petcarekotlin.Dashboard
 import com.example.petcarekotlin.Details
-import com.example.petcarekotlin.Fragments.HomeFragment
 import com.example.petcarekotlin.PetData.PetModel
 import com.example.petcarekotlin.PetData.PetViewModel
 import com.example.petcarekotlin.R
-import com.example.roomapp.data.UserViewModel
 
 
-class RecyclerAdapter constructor(val context:AddDetails): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(val context:Dashboard): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private lateinit var petViewModel: PetViewModel
     private var petlist = emptyList<PetModel>()
@@ -120,7 +118,7 @@ class RecyclerAdapter constructor(val context:AddDetails): RecyclerView.Adapter<
         }
 
         holder.delete.setOnClickListener {
-            petViewModel = ViewModelProvider(context).get(petViewModel::class.java)
+            petViewModel = ViewModelProvider(context)[PetViewModel::class.java]
             petViewModel.deletePet(newlist)
             Toast.makeText(context,"Deleted",Toast.LENGTH_SHORT).show()
 

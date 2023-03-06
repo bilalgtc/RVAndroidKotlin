@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petcarekotlin.Adapters.RecyclerAdapter
 import com.example.petcarekotlin.AddDetails
+import com.example.petcarekotlin.Dashboard
 import com.example.petcarekotlin.PetData.PetViewModel
 import com.example.petcarekotlin.R
 
@@ -41,7 +42,7 @@ class HomeFragment : Fragment() {
 
 
         val recyclerView = v.findViewById<RecyclerView>(R.id.dash_recyclerView)
-        val adapter = RecyclerAdapter(v.context as AddDetails)
+        val adapter = RecyclerAdapter(v.context as Dashboard)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(v.context)
         petViewModel.readAllData.observe(viewLifecycleOwner) { user ->
