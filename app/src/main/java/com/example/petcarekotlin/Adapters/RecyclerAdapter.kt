@@ -23,7 +23,7 @@ import com.example.petcarekotlin.R
 class RecyclerAdapter(val context:Dashboard): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private lateinit var petViewModel: PetViewModel
-    private var petlist = emptyList<PetModel>()
+    private var petList = emptyList<PetModel>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -31,37 +31,38 @@ class RecyclerAdapter(val context:Dashboard): RecyclerView.Adapter<RecyclerAdapt
         return ViewHolder(view)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val newlist = petlist[position]
-        holder.name.text = newlist.name
-        holder.species.text = newlist.species
-        holder.breed.text = newlist.breed
-        holder.size.text = newlist.size
-        holder.image.setImageBitmap(getImage(newlist.image))
+        val newList = petList[position]
+        holder.name.text = newList.name
+        holder.species.text = newList.species
+        holder.breed.text = newList.breed
+        holder.size.text = newList.size
+        holder.image.setImageBitmap(getImage(newList.image))
 
 
-        if (newlist.gender =="male")
+        if (newList.gender =="male")
 
-            holder.gender.text = "male"
+            holder.gender.text = "ma    le"
         else{
             holder.gender.text = "female"
         }
 
-        if (newlist.neutered) {
+        if (newList.neutered) {
             holder.neuteredtxt.text = "Neutered"
         }else{
             holder.neuteredtxt.text = " "
             holder.neuteredtxt.background=null
         }
 
-        if (newlist.vacci) {
+        if (newList.vacci) {
             holder.vaccitxt.text = "Vaccinated"
         }else{
             holder.vaccitxt.text = " "
             holder.vaccitxt.background=null
         }
 
-        if (newlist.dogs) {
+        if (newList.dogs) {
             holder.cattxt.text = "Friendly with dogs"
         }else{
             holder.dogtxt.text = " "
@@ -69,7 +70,7 @@ class RecyclerAdapter(val context:Dashboard): RecyclerView.Adapter<RecyclerAdapt
 
         }
 
-        if (newlist.cats) {
+        if (newList.cats) {
             holder.cattxt.text = "Friendly with dogs"
         }else{
             holder.cattxt.text = ""
@@ -79,20 +80,20 @@ class RecyclerAdapter(val context:Dashboard): RecyclerView.Adapter<RecyclerAdapt
         holder.update.setOnClickListener {
 
             val i = Intent(it.context,AddDetails::class.java)
-            i.putExtra("id",newlist.id.toString())
-            i.putExtra("name",newlist.name)
-            i.putExtra("species",newlist.species)
-            i.putExtra("breed",newlist.breed)
-            i.putExtra("size",newlist.size)
-            i.putExtra("gender",newlist.gender)
-            i.putExtra("image",newlist.image)
+            i.putExtra("id",newList.id.toString())
+            i.putExtra("name",newList.name)
+            i.putExtra("species",newList.species)
+            i.putExtra("breed",newList.breed)
+            i.putExtra("size",newList.size)
+            i.putExtra("gender",newList.gender)
+            i.putExtra("image",newList.image)
 
-            i.putExtra("neutered",newlist.neutered.toString())
-            i.putExtra("vacci",newlist.vacci.toString())
-            i.putExtra("dogs",newlist.dogs.toString())
-            i.putExtra("cats",newlist.cats.toString())
-            i.putExtra("child",newlist.child.toString())
-            i.putExtra("children",newlist.childern.toString())
+            i.putExtra("neutered",newList.neutered.toString())
+            i.putExtra("vacci",newList.vacci.toString())
+            i.putExtra("dogs",newList.dogs.toString())
+            i.putExtra("cats",newList.cats.toString())
+            i.putExtra("child",newList.child.toString())
+            i.putExtra("children",newList.childern.toString())
             i.putExtra("isEditMode",true)
             it.context.startActivity(i)
 
@@ -100,33 +101,33 @@ class RecyclerAdapter(val context:Dashboard): RecyclerView.Adapter<RecyclerAdapt
 
         holder.image.setOnClickListener {
             val i = Intent(it.context,Details::class.java)
-            i.putExtra("name",newlist.name)
-            i.putExtra("species",newlist.species)
-            i.putExtra("breed",newlist.breed)
-            i.putExtra("size",newlist.size)
-            i.putExtra("gender",newlist.gender)
-            i.putExtra("image",newlist.image)
+            i.putExtra("name",newList.name)
+            i.putExtra("species",newList.species)
+            i.putExtra("breed",newList.breed)
+            i.putExtra("size",newList.size)
+            i.putExtra("gender",newList.gender)
+            i.putExtra("image",newList.image)
 
-            i.putExtra("neutered",newlist.neutered.toString())
-            i.putExtra("vacci",newlist.vacci.toString())
-            i.putExtra("dogs",newlist.dogs.toString())
-            i.putExtra("cats",newlist.cats.toString())
-            i.putExtra("child",newlist.child.toString())
-            i.putExtra("children",newlist.childern.toString())
+            i.putExtra("neutered",newList.neutered.toString())
+            i.putExtra("vacci",newList.vacci.toString())
+            i.putExtra("dogs",newList.dogs.toString())
+            i.putExtra("cats",newList.cats.toString())
+            i.putExtra("child",newList.child.toString())
+            i.putExtra("children",newList.childern.toString())
             it.context.startActivity(i)
 
         }
 
         holder.delete.setOnClickListener {
             petViewModel = ViewModelProvider(context)[PetViewModel::class.java]
-            petViewModel.deletePet(newlist)
+            petViewModel.deletePet(newList)
             Toast.makeText(context,"Deleted",Toast.LENGTH_SHORT).show()
 
         }
     }
 
     override fun getItemCount(): Int {
-            return petlist.size
+            return petList.size
     }
 
     class ViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView){
@@ -149,11 +150,11 @@ class RecyclerAdapter(val context:Dashboard): RecyclerView.Adapter<RecyclerAdapt
 
     @SuppressLint("NotifyDataSetChanged")
     fun setData(petlist:List<PetModel>){
-        this.petlist = petlist
+        this.petList = petlist
         notifyDataSetChanged()
     }
 
-    fun getImage(images: ByteArray?): Bitmap? {
+    private fun getImage(images: ByteArray?): Bitmap? {
         return images?.let { BitmapFactory.decodeByteArray(images, 0, it.size) }
     }
 }
