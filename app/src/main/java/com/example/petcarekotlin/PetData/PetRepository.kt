@@ -1,7 +1,6 @@
 package com.example.petcarekotlin.PetData
 
 import androidx.lifecycle.LiveData
-import com.example.petcarekotlin.LoginData.User
 
 class PetRepository(private val petDao: PetDao) {
 
@@ -15,7 +14,7 @@ class PetRepository(private val petDao: PetDao) {
         petDao.updatePet(petModel)
     }
 
-    suspend fun deletePet(petModel: PetModel){
+    fun deletePet(petModel: PetModel){
         petDao.deletePet(petModel)
     }
 

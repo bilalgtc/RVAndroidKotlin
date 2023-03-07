@@ -29,14 +29,6 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-//    fun getUSer(email:String,password:String){
-//        viewModelScope.launch {
-//            val user = repository.getUser(email, password)
-//            _getUSer.value = user != null
-//        }
-//    }
-
-
     fun loginUser(email: String, password: String) {
         viewModelScope.launch {
             val user = repository.getUser(email, password)

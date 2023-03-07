@@ -1,12 +1,9 @@
 package com.example.petcarekotlin.PetData
 
 import android.content.Context
-import android.provider.ContactsContract.Data
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.petcarekotlin.LoginData.UserDao
-import com.example.petcarekotlin.LoginData.UserDatabase
 
 
 @Database(entities = [PetModel::class], version = 1, exportSchema = false)

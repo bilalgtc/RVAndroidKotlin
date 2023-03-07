@@ -1,5 +1,6 @@
 package com.example.petcarekotlin
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
@@ -37,6 +38,7 @@ class AddDetails : AppCompatActivity() {
     var isEditMode = false
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddDetailsBinding.inflate(layoutInflater)
@@ -241,6 +243,7 @@ class AddDetails : AppCompatActivity() {
         startActivityForResult(intent, CAMERA)
     }
 
+    @Deprecated("Deprecated in Java")
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         super.onActivityResult(requestCode, resultCode, data)

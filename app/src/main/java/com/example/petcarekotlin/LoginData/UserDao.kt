@@ -1,7 +1,5 @@
 package com.example.petcarekotlin.LoginData
 
-import android.provider.ContactsContract.CommonDataKinds.Email
-import androidx.lifecycle.LiveData
 import androidx.room.*
 
 

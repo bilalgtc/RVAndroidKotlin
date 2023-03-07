@@ -4,25 +4,22 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.getSystemService
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.example.petcarekotlin.Introduction
 import com.example.petcarekotlin.R
 
 class ViewPagerAdapter(val context: Context): PagerAdapter() {
 
 
 
-    val images = arrayOf(R.drawable.illustration, R.drawable.illustration2, R.drawable.dog_illustration)
-    val headings = arrayOf( R.string.silde_heading1,
+    private val images = arrayOf(R.drawable.illustration, R.drawable.illustration2, R.drawable.dog_illustration)
+    private val headings = arrayOf( R.string.silde_heading1,
         R.string.silde_heading2,
         R.string.silde_heading3)
 
-    val description  = arrayOf(  R.string.slide_description1,
+    private val description  = arrayOf(  R.string.slide_description1,
         R.string.slide_description2,
         R.string.slide_description3)
 

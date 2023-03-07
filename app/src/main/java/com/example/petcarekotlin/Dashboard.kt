@@ -9,7 +9,6 @@ import com.example.petcarekotlin.Fragments.ExploreFragment
 import com.example.petcarekotlin.Fragments.HomeFragment
 import com.example.petcarekotlin.Fragments.ProfileFragment
 import com.example.petcarekotlin.databinding.ActivityDashboardBinding
-import com.google.android.material.navigation.NavigationBarView
 
 class Dashboard : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
@@ -19,7 +18,7 @@ class Dashboard : AppCompatActivity() {
         setContentView(binding.root)
 
         setFragment(HomeFragment())
-        binding.bottomNavigation.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home_icon -> {
                     setFragment(HomeFragment())
@@ -39,7 +38,7 @@ class Dashboard : AppCompatActivity() {
                 }
                 else -> false
             }
-        })
+        }
 
 
     }

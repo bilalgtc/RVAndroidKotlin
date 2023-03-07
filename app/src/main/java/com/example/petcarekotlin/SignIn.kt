@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.petcarekotlin.databinding.ActivitySignInBinding
 import com.example.roomapp.data.UserViewModel
@@ -40,16 +39,16 @@ class SignIn : AppCompatActivity() {
 
 
         }
-        userViewModel.loginSuccess.observe(this, Observer { success->
-            if (success){
-                Toast.makeText(applicationContext,"Success",Toast.LENGTH_SHORT).show()
-                startActivity(Intent(applicationContext,Dashboard::class.java))
+        userViewModel.loginSuccess.observe(this) { success ->
+            if (success) {
+                Toast.makeText(applicationContext, "Success", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(applicationContext, Dashboard::class.java))
                 finish()
 
-            }else{
-                Toast.makeText(applicationContext,"User not found",Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(applicationContext, "User not found", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
 
 
 

@@ -1,6 +1,5 @@
 package com.example.roomapp.data
 
-import androidx.lifecycle.LiveData
 import com.example.petcarekotlin.LoginData.User
 import com.example.petcarekotlin.LoginData.UserDao
 
