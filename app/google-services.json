@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "599281251054",
+    "project_id": "petcarekotlin",
+    "storage_bucket": "petcarekotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599281251054:android:8fd3e3d5197a19086ff9ff",
+        "android_client_info": {
+          "package_name": "com.example.petcarekotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599281251054-73euu77h20qrj7lrbrfqam9ga0auurjn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtSLT5xPqr8C5DRX8hrPi2-oaKaE7Rtu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599281251054-73euu77h20qrj7lrbrfqam9ga0auurjn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
