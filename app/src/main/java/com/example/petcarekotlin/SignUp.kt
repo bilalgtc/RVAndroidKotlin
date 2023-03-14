@@ -11,7 +11,7 @@ import com.example.roomapp.data.UserViewModel
 class SignUp : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
-    private lateinit var userViewModel:UserViewModel
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,15 +27,15 @@ class SignUp : AppCompatActivity() {
             val mobile = binding.mobileEd.text.toString()
             val password = binding.passEd.text.toString()
 
-            val user = User(0,name,email,mobile, password)
+            val user = User(0, name, email, mobile, password)
             userViewModel.addUser(user)
 
-            binding.nameEd.text=null
-            binding.emailEd.text=null
-            binding.mobileEd.text=null
-            binding.passEd.text=null
+            binding.nameEd.text = null
+            binding.emailEd.text = null
+            binding.mobileEd.text = null
+            binding.passEd.text = null
 
-            startActivity(Intent(applicationContext,SignIn::class.java))
+            startActivity(Intent(applicationContext, SignIn::class.java))
             finish()
 
         }

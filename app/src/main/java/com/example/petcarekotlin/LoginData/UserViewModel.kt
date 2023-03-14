@@ -10,7 +10,7 @@ import com.example.petcarekotlin.LoginData.UserDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class UserViewModel(application: Application): AndroidViewModel(application) {
+class UserViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: UserRepository
     private val _loginSuccess = MutableLiveData<Boolean>()
@@ -19,11 +19,11 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
 
     init {
         val userDao = UserDatabase.getDatabase(application).userDao()
-            repository = UserRepository(userDao)
+        repository = UserRepository(userDao)
 
     }
 
-    fun addUser(user: User){
+    fun addUser(user: User) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUser(user)
         }
@@ -35,7 +35,6 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
             _loginSuccess.value = user != null
         }
     }
-
 
 
 }

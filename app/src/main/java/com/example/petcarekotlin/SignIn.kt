@@ -10,11 +10,11 @@ import com.example.petcarekotlin.databinding.ActivitySignInBinding
 import com.example.roomapp.data.UserViewModel
 
 
-
 class SignIn : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
-//    private lateinit var userRepository: UserRepository
+
+    //    private lateinit var userRepository: UserRepository
     private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,12 +30,11 @@ class SignIn : AppCompatActivity() {
 
         submit.setOnClickListener {
 
-                val  email = binding.email2Ed.text.toString()
-                val  password = binding.pass2Ed.text.toString()
+            val email = binding.email2Ed.text.toString()
+            val password = binding.pass2Ed.text.toString()
 
 
             userViewModel.loginUser(email, password)
-
 
 
         }

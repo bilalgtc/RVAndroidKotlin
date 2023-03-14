@@ -8,8 +8,8 @@ import com.example.petcarekotlin.Adapters.ViewPagerAdapter
 import com.example.petcarekotlin.databinding.ActivityIntroductionBinding
 
 class Introduction : AppCompatActivity() {
-    private lateinit var binding:ActivityIntroductionBinding
-    private lateinit var  viewadapter:ViewPagerAdapter
+    private lateinit var binding: ActivityIntroductionBinding
+    private lateinit var viewadapter: ViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +22,10 @@ class Introduction : AppCompatActivity() {
         binding.dots.attachTo(binding.viewpager)
 
         binding.nextBtn.setOnClickListener {
-            if (getItem(0)<2){
+            if (getItem(0) < 2) {
                 binding.viewpager.setCurrentItem(getItem(1), true)
-            }else{
-                val i = Intent(applicationContext,LandingPage::class.java)
+            } else {
+                val i = Intent(applicationContext, LandingPage::class.java)
                 startActivity(i)
                 finish()
             }
@@ -36,10 +36,14 @@ class Introduction : AppCompatActivity() {
             override fun onPageScrollStateChanged(state: Int) {
             }
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                if (position==2){
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                if (position == 2) {
                     binding.nextBtn.text = "Get Started"
-                }else{
+                } else {
                     binding.nextBtn.text = "Next"
                 }
             }
@@ -50,7 +54,8 @@ class Introduction : AppCompatActivity() {
 
         })
     }
-    fun getItem(position:Int): Int {
+
+    fun getItem(position: Int): Int {
         return binding.viewpager.currentItem + position
     }
 }

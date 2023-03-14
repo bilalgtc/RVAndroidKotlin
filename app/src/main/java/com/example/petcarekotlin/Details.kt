@@ -42,40 +42,40 @@ class Details : AppCompatActivity() {
 
 
 
-        if (neutered == "true"){
+        if (neutered == "true") {
             binding.s1.setImageResource(R.drawable.check_circle_24)
-        }else{
+        } else {
             binding.s1.setImageResource(R.drawable.cross_cicle)
         }
 
-        if (vacci == "true"){
+        if (vacci == "true") {
             binding.s2.setImageResource(R.drawable.check_circle_24)
-        }else{
+        } else {
             binding.s2.setImageResource(R.drawable.cross_cicle)
         }
 
 
-        if (dog == "true"){
+        if (dog == "true") {
             binding.s3.setImageResource(R.drawable.check_circle_24)
-        }else{
+        } else {
             binding.s3.setImageResource(R.drawable.cross_cicle)
         }
 
-        if (cat == "true"){
+        if (cat == "true") {
             binding.s4.setImageResource(R.drawable.check_circle_24)
-        }else{
+        } else {
             binding.s4.setImageResource(R.drawable.cross_cicle)
         }
 
-        if (child == "true"){
+        if (child == "true") {
             binding.s5.setImageResource(R.drawable.check_circle_24)
-        }else{
+        } else {
             binding.s5.setImageResource(R.drawable.cross_cicle)
         }
 
-        if (children == "true"){
+        if (children == "true") {
             binding.s6.setImageResource(R.drawable.check_circle_24)
-        }else{
+        } else {
             binding.s6.setImageResource(R.drawable.cross_cicle)
         }
 

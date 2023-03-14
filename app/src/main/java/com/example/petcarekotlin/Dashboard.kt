@@ -43,9 +43,9 @@ class Dashboard : AppCompatActivity() {
 
     }
 
-    fun setFragment(fragment: Fragment){
-        val fragmentTransaction:FragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container,fragment)
+    fun setFragment(fragment: Fragment) {
+        val fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragment_container, fragment)
         fragmentTransaction.commit()
     }
 

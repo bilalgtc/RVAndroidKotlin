@@ -17,6 +17,6 @@ interface PetDao {
     suspend fun updatePet(petModel: PetModel)
 
     @Delete
-     fun deletePet(petModel: PetModel)
+    fun deletePet(petModel: PetModel)
 
 }

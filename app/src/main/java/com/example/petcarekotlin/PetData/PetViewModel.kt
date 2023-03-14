@@ -7,10 +7,10 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PetViewModel(application: Application): AndroidViewModel(application) {
+class PetViewModel(application: Application) : AndroidViewModel(application) {
 
     val readAllData: LiveData<List<PetModel>>
-    private val repository:PetRepository
+    private val repository: PetRepository
 
     init {
         val petDao = DatabaseHelper.getDatabase(application).petDao()
@@ -19,19 +19,20 @@ class PetViewModel(application: Application): AndroidViewModel(application) {
 
     }
 
-    fun addUser(petModel: PetModel){
+    fun addUser(petModel: PetModel) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUser(petModel)
         }
     }
 
 
-    fun updatePet(petModel: PetModel){
+    fun updatePet(petModel: PetModel) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.updatePet(petModel)
         }
     }
-    fun deletePet(petModel: PetModel){
+
+    fun deletePet(petModel: PetModel) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deletePet(petModel)
         }

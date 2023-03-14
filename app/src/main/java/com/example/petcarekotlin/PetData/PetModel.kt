@@ -14,11 +14,11 @@ data class PetModel(
     val breed: String,
     val size: String,
     val image: ByteArray?,
-    val gender:String,
-    val neutered:Boolean,
-    val vacci:Boolean,
-    val dogs:Boolean,
-    val cats:Boolean,
-    val child:Boolean,
-    val childern:Boolean
-    )
+    val gender: String,
+    val neutered: Boolean,
+    val vacci: Boolean,
+    val dogs: Boolean,
+    val cats: Boolean,
+    val child: Boolean,
+    val childern: Boolean
+)

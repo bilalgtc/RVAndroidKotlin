@@ -6,8 +6,7 @@ import com.example.petcarekotlin.LoginData.UserDao
 class UserRepository(private val userDao: UserDao) {
 
 
-
-    suspend fun addUser(user: User){
+    suspend fun addUser(user: User) {
         userDao.addUser(user)
     }
 

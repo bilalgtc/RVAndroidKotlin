@@ -67,7 +67,7 @@ class AddDetails : AppCompatActivity() {
         val children = intent.getStringExtra("children")
         isEditMode = intent.getBooleanExtra("isEditMode", false)
 
-        if(isEditMode) {
+        if (isEditMode) {
 
 
             binding.nameEd.setText(name)
@@ -127,8 +127,8 @@ class AddDetails : AppCompatActivity() {
             binding.s5.isChecked = child.equals("true")
             binding.s6.isChecked = children.equals("true")
 
-        }else{
-            Toast.makeText(applicationContext,"Not in editMode",Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(applicationContext, "Not in editMode", Toast.LENGTH_SHORT).show()
         }
 
         petViewModel = ViewModelProvider(this)[PetViewModel::class.java]
@@ -168,9 +168,8 @@ class AddDetails : AppCompatActivity() {
                     stats[5]
                 )
                 petViewModel.updatePet(petModel)
-                Toast.makeText(applicationContext,"Update Successful",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Update Successful", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(applicationContext, Dashboard::class.java))
-
 
 
             } else {
@@ -205,7 +204,7 @@ class AddDetails : AppCompatActivity() {
                     stats[5]
                 )
                 petViewModel.addUser(petModel)
-                Toast.makeText(applicationContext,"Add Successful",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Add Successful", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(applicationContext, Dashboard::class.java))
 
             }
@@ -278,7 +277,6 @@ class AddDetails : AppCompatActivity() {
     }
 
 
-
     fun cardStats() {
 
         binding.maleTxt.setTextColor(Color.BLACK)
@@ -342,7 +340,6 @@ class AddDetails : AppCompatActivity() {
 
 
     }
-
 
 
     fun getImage(images: ByteArray?): Bitmap? {

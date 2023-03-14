@@ -7,14 +7,12 @@ import androidx.room.RoomDatabase
 
 
 @Database(entities = [PetModel::class], version = 1, exportSchema = false)
-abstract class DatabaseHelper :RoomDatabase(){
+abstract class DatabaseHelper : RoomDatabase() {
 
-    abstract fun petDao():PetDao
+    abstract fun petDao(): PetDao
 
 
     companion object {
-
-
 
 
         @Volatile
@@ -22,10 +20,10 @@ abstract class DatabaseHelper :RoomDatabase(){
 
         fun getDatabase(context: Context): DatabaseHelper {
             val tempInstance = INSTANCE
-            if(tempInstance != null){
+            if (tempInstance != null) {
                 return tempInstance
             }
-            synchronized(this){
+            synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     DatabaseHelper::class.java,
